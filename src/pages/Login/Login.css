@@ -1,0 +1,143 @@
+.ecom {
+  background-color: #f1f1f1;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  background-image: url(../../media/countryside-women-out-field-posing.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+}
+iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.container-login-ecom {
+  width: 60%;
+  display: flex;
+  margin: 0 auto;
+
+  background-color: #fff;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.27);
+
+  /* background: rgba(255, 255, 255, 0.7); */
+  /* border-radius: 16px; */
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.container-login-ecom .container-image-ecom {
+  width: 50%;
+  background-color: #3ecc72;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px 0 0 15px;
+  display: flex;
+  border-right: 4px solid #fff;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-login-ecom .container-image-ecom img {
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container-login-ecom form {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  position: relative;
+ 
+}
+
+.container-login-ecom form h1 {
+  color: #fff;
+  font-weight: 800;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container-login-ecom form .form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+    /* justify-content: flex-start; */
+    /* border: 1px solid #ccc; */
+    text-align: start;
+  /* border-bottom: 1px solid #ccc; */
+}
+
+.container-login-ecom form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 14px;
+}
+
+.container-login-ecom form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.container-login-ecom form input:focus {
+  border-color: #3ecc72;
+  box-shadow: 0 0 8px rgba(62, 204, 114, 0.5);
+  outline: none;
+}
+
+.container-login-ecom form button {
+  background-color: #3ecc72;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.container-login-ecom form button:hover {
+  background-color: #489e55;
+  transform: scale(1.02);
+}
+
+.signup-prompt {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+
+.signup-prompt a {
+  color: #fff;
+  text-decoration: none;
+  /* font-weight: bold; */
+  transition: color 0.3s;
+}
+
+.signup-prompt a:hover {
+  color: #f1f1f1;
+  text-decoration: underline;
+}

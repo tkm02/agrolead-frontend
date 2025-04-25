@@ -1,0 +1,52 @@
+.container-cards-cooperatives{
+    /* border: 1px solid; */
+    width: 90%;
+    margin: 50px auto;
+    justify-content: space-between;
+    display: flex;
+    /* padding: 10px; */
+}
+.card-cooperative-info{
+    border: .3px solid #f1f1f1;
+    width: 300px;
+    margin: 0 5px;
+}
+.card-cooperative-info img{
+    width: 95%;
+}
+.card-cooperative-info h3{
+    text-align: start;
+    color: #0EAF22;
+    font-weight: 500;
+    margin: 0 3px;
+}
+.card-cooperative-info div h4{
+    margin: 0 3px;
+}
+.card-cooperative-info div{
+    display: flex;
+    /* border: 1px solid; */
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Outfit", sans-serif;
+}
+.card-cooperative-info div i{
+    color: #0D78F2;
+    margin: 2px;
+}
+.card-cooperative-info a{
+    background-color: #f1f1f1;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 0 0 ;
+    font-family: "Outfit", sans-serif;
+    font-weight: bold;
+    transition: background .3s ease-in-out;
+}
+.card-cooperative-info a:hover{
+    background-color: #0b8719;
+}

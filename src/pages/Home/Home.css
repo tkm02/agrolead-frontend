@@ -1,0 +1,41 @@
+.home h2{
+    /* border: 1px solid; */
+    width: 90%;
+    margin: 15px auto;
+    text-align: start;
+    font-family: "Outfit", sans-serif;
+    font-weight: bold;
+}
+.home h2 span{
+    color: #0D78F2;
+}
+.home h2 span.Tech{
+    color: #0EAF22;
+}
+.card-container {
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 10px auto;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+  }
+  .voir-tout-produits{
+    /* border: 1px solid; */
+    width: 90%;
+    text-decoration: none;
+    margin: 10px auto;
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .voir-tout-produits a{
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #0D78F2;
+  }

@@ -1,0 +1,40 @@
+.services {
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: center space-between;
+    width: 90%;
+    margin: 10px auto 3px auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px #ddd;
+    border-radius: 5px;
+  }
+  
+  .service {
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+  }
+  
+  .service .service-text h4 {
+    /* border: 1px solid; */
+    margin: 10px 0;
+    font-family: "Poppins", sans-serif;
+  }
+  .service .service-text p {
+    /* border: 1px solid; */
+    font-family: "Poppins", sans-serif;
+    width: 90%;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #514d4d;
+  }
+  
+  .service .service-icon {
+    /* border: 1px solid; */
+    width: 50px;
+    height: 45px;
+    margin: 0 8px;
+  }
+  
