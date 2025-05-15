@@ -1,0 +1,181 @@
+#product-page .top__home {
+    width: calc(100% - 3rem);
+    height: 480px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1.5rem;
+    border-radius: 1.3rem;
+    position: relative;
+    z-index: 0;
+    overflow: hidden; /* Pour s'assurer que le filtre ne dépasse pas */
+    position: relative;
+    /* background: url("../../media/"); */
+    background-position: center center;
+    background-size: cover;
+  }
+  
+#product-page .top__home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+  }
+  
+#product-page .cadre__photo {
+    border: 0.2rem solid #fff;
+    border-radius: 0.5rem;
+    height: 350px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin: 0 2rem;
+    position: relative;
+    z-index: 10;
+  }
+  
+  #product-page .cadre__photo img {
+    height: 320px;
+    width: 280px;
+    position: relative;
+    left: 1rem;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    object-position: center;
+    margin-left: -2rem;
+  }
+  
+  #product-page .title {
+    background-color: #09692c;
+    padding: 0rem 2rem;
+    /* border-radius: 0.2rem; */
+    position: absolute;
+    top: 0;
+    left: 220px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #product-page .title:hover {
+    background-color: #fff;
+    color: #09692c;
+  }
+  
+  #product-page.welcome__texte {
+    font-size: clamp(1.1rem, 5vw, 2.3rem);
+    font-weight: 400;
+    font-family: "nunito", sans-serif;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+    top: -2rem;
+    left: 2rem;
+  }
+  
+  #product-page .custom {
+    font-weight: bold;
+    color: #ffbe0b;
+    font-weight: bold;
+    font-family: "Outfit", sans-serif;
+  }
+  
+  #product-page .para_welcome_text {
+    margin-top: 1rem;
+    font-weight: 300;
+    font-size: clamp(0.9rem, 5vw, 1.2rem);
+    color: #dee2e6;
+  }
+  
+  #product-page .text__1 {
+    font-size: clamp(1rem, 5vw, 1.3rem);
+    color: #0eaf22;
+  }
+  
+  #product-page .btn_box {
+    margin-top: 1.5rem;
+  }
+  
+  #product-page .btn {
+    background-color: #0eaf22;
+    color: #fff;
+    padding: 0.6rem 1.8rem;
+    font-size: 1rem;
+    border-radius: 0.2rem;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+    text-decoration: none;
+  }
+  
+  #product-page .btn:hover {
+    background-color: transparent;
+    border: 2px solid #0eaf22;
+    color: #fff;
+  }
+  
+  #product-page .top__home {
+    width: calc(100% - 3rem);
+    height: 480px;
+    margin: 0 auto;
+    background: url("../../media/pexels-sergei-a-2589457.jpg");
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1.5rem;
+    /* border-radius: 1.3rem; */
+    position: relative;
+    z-index: 0;
+    width: 90%;
+  }
+  
+  #product-page .box__categorie {
+    width: 160px;
+    height: 55px;
+    border-radius: 0.3rem;
+    background-color: #e9ecef;
+    color: #212529;
+    margin: 1rem auto;
+    line-height: 55px;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    position: relative;
+    z-index: -10;
+  }
+  
+  @media screen and (max-width: 850px) {
+    #product-page .top__home {
+      justify-content: center;
+      height: auto;
+      padding: 2rem;
+    }
+  
+    #product-page.cadre__photo {
+      display: none;
+    }
+  
+    #product-page .welcome__texte {
+      text-align: center;
+      left: 0;
+      margin: 0;
+      margin-top: 2rem;
+    }
+  
+    #product-page .title {
+      /* left: 0; */
+      width: 100%;
+      margin: 50PX;
+    }
+  }
+  

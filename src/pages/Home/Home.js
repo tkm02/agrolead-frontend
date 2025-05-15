@@ -117,7 +117,7 @@ const produits = [
       </div>
 
       <div className="voir-tout-produits">
-        <Link to="/ecom/products">Voir plus de produits</Link>
+        <Link to="/products">Voir plus de produits</Link>
         <i className="fa-solid fa-arrow-right"></i>
       </div>
       <Footer />

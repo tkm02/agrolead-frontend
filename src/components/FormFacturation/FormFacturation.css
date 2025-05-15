@@ -1,0 +1,60 @@
+.facturation-container {
+    width: 65%;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid; */
+  }
+  
+  .facturation-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
+  
+  .half-width {
+    width: 50%;
+    margin: 0 4px;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin: 0 3px;
+  }
+  .other-width{
+      width: 30%;
+  }
+  
+  .facturation-row input {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .facturation-row input:focus {
+    border-color: #516e32;
+    outline: none;
+  }
+  
+  .hr-divider {
+    border: 1px solid #ccc;
+    width: 100%;  
+  }
+  
+  textarea {
+    width: 98%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  
+  }
+  
+  .textarea-note:focus {
+    border-color: #516e32;
+    outline: none;
+  }
+  

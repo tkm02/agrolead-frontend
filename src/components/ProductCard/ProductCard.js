@@ -8,7 +8,7 @@ const ProductCard = ({ image, name, price, oldPrice, rating, classStyle, id }) =
       <div className="product-card__image-container">
         <img src={image} alt={name} className="product-card__image" />
         <div className="product-card__actions">
-          <Link className="product-card__action-btn" to={`/ecom/detailProduits/description/${id}`}>
+          <Link className="product-card__action-btn" to={`/detailProduits/${id}`}>
             <i className="fa-regular fa-eye"></i>
           </Link>
           <button className="product-card__action-btn">

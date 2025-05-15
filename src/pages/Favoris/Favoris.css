@@ -1,0 +1,197 @@
+/* PREMIUM CART STYLING */
+
+/* Variables globales */
+:root {
+    --primary-color: #146907;
+    --primary-light: rgba(20, 105, 7, 0.1);
+    --primary-gradient: linear-gradient(135deg, #146907, #81ed0d);
+    --secondary-color: #DD1573;
+    --text-dark: #212529;
+    --text-light: #6c757d;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --font-primary: 'Outfit', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+  }
+  
+  /* Conteneur principal */
+  .section-panier {
+    width: 90%;
+    max-width: 1400px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-family: var(--font-primary);
+  }
+  
+  /* Style titre principal */
+  h2 {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    margin: 40px 0 20px;
+    position: relative;
+  }
+  
+  h2:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--primary-gradient);
+    border-radius: 2px;
+  }
+  
+  /* Tableau des produits */
+  .table-container {
+    flex: 1 1 65%;
+    min-width: 600px;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    position: relative;
+    border: none;
+  }
+  
+  .styled-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: var(--font-secondary);
+  }
+  
+  .styled-table th {
+    padding: 20px;
+    font-weight: 500;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .styled-table td {
+    padding: 20px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  /* Cellule produit */
+  .product-cell {
+    display: flex;
+    align-items: center;
+  }
+  
+  .product-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .product-info img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    background-color: #f9f9f9;
+    padding: 5px;
+  }
+  
+  .product-info img:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-info span {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  /* Prix */
+  .styled-table td:nth-child(2) {
+    color: var(--text-dark);
+    font-weight: 500;
+  }
+  
+  /* Bouton supprimer */
+  .btn-remove {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .btn-remove:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: rotate(90deg);
+  }
+  
+  /* Bouton mise à jour */
+  .div-update-btn {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #fcfcfc;
+  }
+  
+  .update-button {
+    padding: 12px 25px;
+    background-color: white;
+    color: var(--text-dark);
+    border: 2px solid #eee;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+  }
+  
+  .update-button:hover {
+    background: var(--primary-gradient);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(20, 105, 7, 0.25);
+  }
+  .socials{
+    /* border: 1px solid; */
+    display: flex;
+  }
+  .social{
+    font-size: 2em;
+    margin: 5px;
+    color: #ccc;
+  }
+  .add-panier {
+    background-color: #516e32;
+    border: none;
+    width: 80%;
+    color: #fff;
+    padding: 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,168 @@
+/* Styles pour la carte résumé */
+
+.resume-card {
+    position: relative;
+    font-family: var(--font-primary);
+  }
+  
+  /* Section Code Promo */
+  .promo-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eee;
+  }
+  
+  .promo-input-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .promo-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+  }
+  
+  .promo-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(20, 105, 7, 0.1);
+    outline: none;
+  }
+  
+  .promo-button {
+    padding: 0 20px;
+    border: none;
+    background-color: #f0f0f0;
+    color: var(--text-dark);
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .promo-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .promo-error {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .promo-success {
+    color: #2ecc71;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Style spécifique pour le rabais */
+  .discount-item {
+    color: #2ecc71;
+    font-weight: 500;
+  }
+  
+  .free-shipping {
+    color: #2ecc71;
+    font-weight: 500;
+  }
+  
+  /* Icons des méthodes de paiement */
+  .payment-methods {
+    margin: 20px 0;
+  }
+  
+  .payment-method-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .payment-method-icons i {
+    font-size: 1.5rem;
+    color: #aaa;
+    transition: var(--transition);
+  }
+  
+  .payment-method-icons i:hover {
+    color: var(--text-dark);
+    transform: translateY(-2px);
+  }
+  
+  /* Message de sécurité */
+  .secured-payment {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .secured-payment i {
+    color: #2ecc71;
+  }
+  
+  /* Effet de survol pour le bouton de paiement */
+  .payment-button {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .payment-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s;
+    z-index: -1;
+  }
+  
+  .payment-button:hover::before {
+    left: 100%;
+  }
+  
+  /* Animation du bouton de mise à jour */
+  .update-button.updating {
+    background-color: #f0f0f0;
+    color: var(--text-light);
+    cursor: not-allowed;
+  }
+  
+  /* Animation pour le chargement */
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .update-button.updating i {
+    animation: pulse 1s infinite;
+  }

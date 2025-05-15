@@ -1,0 +1,51 @@
+.recherche-produit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.container-input-recherche-produit {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.container-input-recherche-produit:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.container-input-recherche-produit input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: transparent;
+    color: #333;
+    font-family: "Outfit", sans-serif;
+}
+
+.container-input-recherche-produit input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.container-input-recherche-produit .fa-solid.fa-magnifying-glass {
+    font-size: 1.2rem;
+    color: #666;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.container-input-recherche-produit .fa-solid.fa-magnifying-glass:hover {
+    color: #146907;
+}

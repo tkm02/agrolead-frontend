@@ -12,7 +12,7 @@ const Nav = () => {
         <NavLink to="/cooperative" className="nav-item">
           Cooperative
         </NavLink>
-        <NavLink to="/produits" className="nav-item">
+        <NavLink to="/products" className="nav-item">
           Produits
         </NavLink>
         <NavLink to="/panier" className="nav-item">
@@ -21,7 +21,7 @@ const Nav = () => {
         <NavLink to="/favoris" className="nav-item">
           Favoris
         </NavLink>
-        <NavLink to="/detailCommande" className="nav-item">
+        <NavLink to="/detailcommande/111" className="nav-item">
           Commande
         </NavLink>
       </nav>
@@ -33,7 +33,7 @@ const Nav = () => {
           <div className="nav-cart-count">1</div>
           <i className="fa-solid fa-cart-shopping"></i>
         </Link>
-        <Link to="/compte" className="nav-icon">
+        <Link to="/dashboard" className="nav-icon">
           <i className="fa-solid fa-user"></i>
         </Link>
       </div>

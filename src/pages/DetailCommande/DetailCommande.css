@@ -1,0 +1,117 @@
+.container-details-commande {
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin: 20px auto;
+    border-radius: 5px;
+  }
+  
+  .container-tables-commande {
+    /* border: 1px solid; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 0;
+    height: 300px;
+  }
+  
+  .order-details {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 25%;
+    height: 200px;
+    margin: 0 5px;
+  }
+  
+  .order-details .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+  }
+  .trait-separation {
+    height: 30px;
+    border: 0.5px solid #ccc;
+    margin: 0 2px;
+  }
+  .order-details .header .header-element {
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-size: 0.8em;
+    width: auto;
+  }
+  
+  .order-details .header .value {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .order-details > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .order-details .label {
+    flex: 1;
+  }
+  
+  .order-details .value {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .order-details > div:last-child {
+    margin-bottom: 0;
+  }
+  
+  .table-details {
+    width: 70%;
+    margin-bottom: 20px;
+    margin: 50px auto;
+  }
+  
+  .table-details th,
+  .table-details td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  td p {
+    font-weight: 300;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+  }
+  .container-btn-retour{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .btn-retour {
+    background-color: #516E32;
+    padding: 10px;
+    width: 15%;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    margin: 20px auto;
+    text-align: center;
+    cursor: pointer;
+  }
+  
