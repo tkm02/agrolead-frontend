@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
 import Home from '../pages/Home/Home';
@@ -10,31 +10,49 @@ import ProductPage from '../pages/ProductPage/ProductPage';
 import DetailCommande from '../pages/DetailCommande/DetailCommande';
 import Facturations from '../pages/Facturations/Facturations';
 import Dashboard from '../pages/Dashboard/Dashboard';
+import Cooperative from '../pages/Cooperative/Cooperative';
+import CooperativeDetail from '../pages/CooperativeDetail/CooperativeDetail';
+import Commandes from '../pages/Commandes/Commandes'; // Nouvelle importation
+import Factures from '../pages/Factures/Factures'; // Nouvelle importation
+
 const AppRoutes = () => {
   return (
     <Router>
       <Routes>
+        {/* Routes publiques */}
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
-        <Route path="/" element={<Home />} />
-        <Route path='/panier' element={<Panier />} />
-        <Route path="/favoris" element={<Favoris />} />
-        <Route path="/detailproduits/:id" element={<DetailProduits />} />
         <Route path="/products" element={<ProductPage />} />
-        <Route path='/detailcommande/:id' element={<DetailCommande />} />
-        <Route path='/facturation' element={<Facturations />} />
-        <Route path='/dashboard' element={<Dashboard />} />
-        {/* Ajoutez d'autres routes ici */}
-        {/* <Route path="/home" element={<Home />} /> */}
-        {/* <Route path="/profile" element={<Profile />} /> */}
-        {/* <Route path="/products" element={<Products />} /> */}
-        {/* <Route path="/cart" element={<Cart />} /> */}
-        {/* <Route path="/checkout" element={<Checkout />} /> */}
-        {/* <Route path="/orders" element={<Orders />} /> */}
-        {/* <Route path="/order/:id" element={<OrderDetails />} /> */}
+        <Route path="/detailproduits/:id" element={<DetailProduits />} />
+        
+        {/* Routes pour les coopératives */}
+        <Route path="/cooperative" element={<Cooperative />} />
+        <Route path="/cooperative/:id" element={<CooperativeDetail />} />
+        
+        {/* Compatibilité ascendante - redirections */}
+        <Route 
+          path="/cooperativeDetail" 
+          element={<Navigate to="/cooperative" replace />} 
+        />
+        <Route 
+          path="/cooperativeDetail/:id" 
+          element={<Navigate to="/cooperative/:id" replace />} 
+        />
 
-        {/* <{Route path="/signup" element={<Register />} />} */}
-        {/* Ajoutez d'autres routes ici */}
+        {/* Routes protégées */}
+        <Route path="/panier" element={<Panier />} />
+        <Route path="/favoris" element={<Favoris />} />
+        <Route path="/commandes" element={<Commandes />} /> {/* Nouvelle route */}
+        <Route path="/factures" element={<Factures />} /> {/* Nouvelle route */}
+        <Route path="/detailcommande/:id" element={<DetailCommande />} />
+        <Route path="/facturation" element={<Facturations />} />
+        
+        {/* Tableau de bord */}
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* Gestion des routes non trouvées */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

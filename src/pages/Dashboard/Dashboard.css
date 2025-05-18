@@ -4,23 +4,56 @@
     max-width: 1400px;
     margin: 40px auto;
     font-family: "Outfit", sans-serif;
-  }
-  
-  /* Dashboard Header Styles */
-  .dashboard-header {
+    position: relative;
+}
+
+/* Simulation Button */
+.simulation-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px 16px;
+    background-color: #146907;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Outfit", sans-serif;
+}
+
+.simulation-btn:hover {
+    background-color: #81ed0d;
+    color: #146907;
+}
+
+.simulation-btn.active {
+    background-color: #dc3545;
+}
+
+.simulation-btn.active:hover {
+    background-color: #ff6b7f;
+}
+
+/* Dashboard Header Styles */
+.dashboard-header {
     margin-bottom: 40px;
-  }
-  
-  .dashboard-title {
+    position: relative;
+}
+
+.dashboard-title {
     font-size: 2.5rem;
     font-weight: 800;
     color: #146907;
     text-align: center;
     margin-bottom: 30px;
     position: relative;
-  }
-  
-  .dashboard-title::after {
+    padding-right: 200px;
+}
+
+.dashboard-title::after {
     content: '';
     position: absolute;
     bottom: -15px;
@@ -30,18 +63,18 @@
     height: 4px;
     background: linear-gradient(to right, #146907, #81ed0d);
     border-radius: 2px;
-  }
-  
-  /* Stats Cards Row */
-  .dashboard-stats {
+}
+
+/* Stats Cards Row */
+.dashboard-stats {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     margin-top: 40px;
     flex-wrap: wrap;
-  }
-  
-  .stat-card {
+}
+
+.stat-card {
     background: linear-gradient(135deg, #ffffff 0%, #f5f9f5 100%);
     border-radius: 16px;
     padding: 20px;
@@ -52,48 +85,48 @@
     min-width: 180px;
     border-left: 4px solid #146907;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .stat-card:hover {
+}
+
+.stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-  }
-  
-  .stat-card i {
+}
+
+.stat-card i {
     font-size: 2.5rem;
     color: #146907;
     margin-right: 15px;
     opacity: 0.9;
-  }
-  
-  .stat-content {
+}
+
+.stat-content {
     display: flex;
     flex-direction: column;
-  }
-  
-  .stat-content h3 {
+}
+
+.stat-content h3 {
     font-size: 1.8rem;
     font-weight: 700;
     color: #333;
     margin: 0 0 5px 0;
-  }
-  
-  .stat-content p {
+}
+
+.stat-content p {
     font-size: 0.95rem;
     color: #666;
     margin: 0;
-  }
-  
-  /* Dashboard Sections Grid */
-  .dashboard-sections {
+}
+
+/* Dashboard Sections Grid */
+.dashboard-sections {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     align-items: start;
-  }
-  
-  /* Card Design */
-  .dashboard-card {
+}
+
+/* Card Design */
+.dashboard-card {
     background-color: #ffffff;
     border-radius: 20px;
     padding: 25px;
@@ -104,9 +137,9 @@
     height: 100%;
     position: relative;
     overflow: hidden;
-  }
-  
-  .dashboard-card::before {
+}
+
+.dashboard-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -114,23 +147,23 @@
     width: 100%;
     height: 6px;
     background: linear-gradient(to right, #146907, #81ed0d);
-  }
-  
-  .dashboard-card:hover {
+}
+
+.dashboard-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-  }
-  
-  /* Card Header */
-  .card-header {
+}
+
+/* Card Header */
+.card-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  }
-  
-  .card-header i {
+}
+
+.card-header i {
     font-size: 1.8rem;
     color: #146907;
     margin-right: 15px;
@@ -141,36 +174,36 @@
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-  }
-  
-  .card-header h2 {
+}
+
+.card-header h2 {
     font-size: 1.5rem;
     font-weight: 700;
     color: #333333;
     margin: 0;
-  }
-  
-  /* Card Content */
-  .card-content {
+}
+
+/* Card Content */
+.card-content {
     flex: 1;
     margin-bottom: 20px;
-  }
-  
-  /* Chart Container */
-  .chart-container {
+}
+
+/* Chart Container */
+.chart-container {
     height: 220px;
     margin-bottom: 20px;
     position: relative;
-  }
-  
-  /* Command List */
-  .command-list, .invoice-list, .favorite-list {
+}
+
+/* Command List */
+.command-list, .invoice-list, .favorite-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
-  }
-  
-  .command-item, .invoice-list-item, .favorite-item {
+}
+
+.command-item, .invoice-list-item, .favorite-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -178,139 +211,139 @@
     border-radius: 12px;
     background-color: #f8f9fa;
     transition: transform 0.2s ease, background-color 0.2s ease;
-  }
-  
-  .command-item:hover, .invoice-list-item:hover, .favorite-item:hover {
+}
+
+.command-item:hover, .invoice-list-item:hover, .favorite-item:hover {
     transform: translateX(5px);
     background-color: #f0f3f0;
-  }
-  
-  .command-info, .invoice-list-info {
+}
+
+.command-info, .invoice-list-info {
     display: flex;
     flex-direction: column;
-  }
-  
-  .command-id, .invoice-id {
+}
+
+.command-id, .invoice-id {
     font-weight: 600;
     color: #333;
     font-size: 0.95rem;
-  }
-  
-  .command-date, .invoice-amount {
+}
+
+.command-date, .invoice-amount {
     font-size: 0.85rem;
     color: #666;
-  }
-  
-  /* Status Styles */
-  .status {
+}
+
+/* Status Styles */
+.status {
     font-weight: 600;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.8rem;
     display: inline-block;
     text-align: center;
-  }
-  
-  .status.delivered {
+}
+
+.status.delivered {
     background-color: rgba(40, 167, 69, 0.2);
     color: #28a745;
-  }
-  
-  .status.in-progress {
+}
+
+.status.in-progress {
     background-color: rgba(255, 193, 7, 0.2);
     color: #e6a800;
-  }
-  
-  .status.cancelled {
+}
+
+.status.cancelled {
     background-color: rgba(220, 53, 69, 0.2);
     color: #dc3545;
-  }
-  
-  .invoice-status {
+}
+
+.invoice-status {
     font-weight: 600;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.8rem;
-  }
-  
-  .invoice-status.paid {
+}
+
+.invoice-status.paid {
     background-color: rgba(40, 167, 69, 0.2);
     color: #28a745;
-  }
-  
-  .invoice-status.unpaid {
+}
+
+.invoice-status.unpaid {
     background-color: rgba(220, 53, 69, 0.2);
     color: #dc3545;
-  }
-  
-  /* Invoice Summary */
-  .invoice-summary {
+}
+
+/* Invoice Summary */
+.invoice-summary {
     background: linear-gradient(135deg, #f8f9fa 0%, #edf7ed 100%);
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 20px;
-  }
-  
-  .invoice-item {
+}
+
+.invoice-item {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
-  }
-  
-  .invoice-item:last-child {
+}
+
+.invoice-item:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
-  }
-  
-  .invoice-label {
+}
+
+.invoice-label {
     font-weight: 500;
     color: #555;
-  }
-  
-  .invoice-value {
+}
+
+.invoice-value {
     font-weight: 700;
     color: #333;
-  }
-  
-  .invoice-value.highlight {
+}
+
+.invoice-value.highlight {
     color: #dc3545;
-  }
-  
-  /* Favorite Items */
-  .favorite-item {
+}
+
+/* Favorite Items */
+.favorite-item {
     padding: 10px 15px;
-  }
-  
-  .favorite-img {
+}
+
+.favorite-img {
     width: 40px;
     height: 40px;
     border-radius: 8px;
     object-fit: cover;
-  }
-  
-  .favorite-info {
+}
+
+.favorite-info {
     flex: 1;
     margin-left: 15px;
     display: flex;
     flex-direction: column;
-  }
-  
-  .favorite-name {
+}
+
+.favorite-name {
     font-weight: 600;
     color: #333;
     font-size: 0.95rem;
-  }
-  
-  .favorite-price {
+}
+
+.favorite-price {
     font-size: 0.85rem;
     color: #146907;
     font-weight: 500;
-  }
-  
-  .favorite-cart-btn {
+}
+
+.favorite-cart-btn {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -322,37 +355,37 @@
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.2s ease;
-  }
-  
-  .favorite-cart-btn:hover {
+}
+
+.favorite-cart-btn:hover {
     background-color: #81ed0d;
     color: #146907;
     transform: scale(1.1);
-  }
-  
-  /* Account Section */
-  .account-info {
+}
+
+/* Account Section */
+.account-info {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  }
-  
-  .user-avatar {
+}
+
+.user-avatar {
     position: relative;
     margin-right: 20px;
-  }
-  
-  .user-avatar img {
+}
+
+.user-avatar img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #81ed0d;
-  }
-  
-  .edit-avatar-btn {
+}
+
+.edit-avatar-btn {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -367,32 +400,32 @@
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.2s ease;
-  }
-  
-  .edit-avatar-btn:hover {
+}
+
+.edit-avatar-btn:hover {
     background-color: #81ed0d;
     color: #146907;
-  }
-  
-  .user-details h3 {
+}
+
+.user-details h3 {
     margin: 0 0 5px 0;
     font-size: 1.2rem;
     color: #333;
-  }
-  
-  .user-details p {
+}
+
+.user-details p {
     margin: 0 0 5px 0;
     font-size: 0.9rem;
     color: #666;
-  }
-  
-  .account-actions {
+}
+
+.account-actions {
     display: flex;
     flex-direction: column;
     gap: 12px;
-  }
-  
-  .account-action-btn {
+}
+
+.account-action-btn {
     display: flex;
     align-items: center;
     padding: 12px 15px;
@@ -405,21 +438,21 @@
     font-weight: 500;
     color: #333;
     text-align: left;
-  }
-  
-  .account-action-btn:hover {
+}
+
+.account-action-btn:hover {
     background-color: #e3f7d1;
     transform: translateX(5px);
-  }
-  
-  .account-action-btn i {
+}
+
+.account-action-btn i {
     margin-right: 12px;
     color: #146907;
     font-size: 1.1rem;
-  }
-  
-  /* Dashboard Button */
-  .dashboard-button {
+}
+
+/* Dashboard Button */
+.dashboard-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -434,89 +467,115 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: auto;
     font-family: "Outfit", sans-serif;
-  }
-  
-  .dashboard-button:hover {
+}
+
+.dashboard-button:hover {
     background-color: #81ed0d;
     color: #146907;
     transform: translateY(-3px);
-  }
-  
-  .dashboard-button i {
+}
+
+.dashboard-button i {
     margin-left: 8px;
     transition: transform 0.3s ease;
-  }
-  
-  .dashboard-button:hover i {
+}
+
+.dashboard-button:hover i {
     transform: translateX(5px);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 1200px) {
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
     .dashboard-sections {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
-  }
-  
-  @media (max-width: 992px) {
+}
+
+@media (max-width: 992px) {
     .stat-card {
-      min-width: calc(50% - 15px);
-      flex: 0 0 calc(50% - 15px);
+        min-width: calc(50% - 15px);
+        flex: 0 0 calc(50% - 15px);
     }
-  }
-  
-  @media (max-width: 768px) {
+
     .dashboard-title {
-      font-size: 2rem;
+        padding-right: 0;
+    }
+
+    .simulation-btn {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin: 20px auto 0;
+        display: block;
+        width: fit-content;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-title {
+        font-size: 2rem;
+        padding-right: 0;
     }
     
     .dashboard-container {
-      width: 95%;
-      margin: 20px auto;
+        width: 95%;
+        margin: 20px auto;
     }
     
     .dashboard-stats {
-      gap: 15px;
+        gap: 15px;
     }
     
     .stat-card {
-      padding: 15px;
+        padding: 15px;
     }
     
     .stat-card i {
-      font-size: 2rem;
+        font-size: 2rem;
     }
     
     .stat-content h3 {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
-  }
-  
-  @media (max-width: 576px) {
+}
+
+@media (max-width: 576px) {
     .dashboard-title {
-      font-size: 1.8rem;
+        font-size: 1.8rem;
     }
     
     .stat-card {
-      min-width: 100%;
-      flex: 0 0 100%;
+        min-width: 100%;
+        flex: 0 0 100%;
     }
     
     .dashboard-card {
-      padding: 20px;
+        padding: 20px;
     }
     
     .card-header i {
-      width: 40px;
-      height: 40px;
-      font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
     }
     
     .card-header h2 {
-      font-size: 1.3rem;
+        font-size: 1.3rem;
     }
     
     .chart-container {
-      height: 180px;
+        height: 180px;
     }
-  }
+}
+
+/* Animation for simulation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.simulating .stat-card {
+    animation: pulse 1.5s infinite;
+}

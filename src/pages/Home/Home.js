@@ -1,21 +1,43 @@
-import CardsCooperative from "../../components/CardsCooperative/CardsCooperative";
-import Nav from "../../components/Nav/Nav";
-import Slider from "../../components/Slider/Slider";
-import './Home.css'; // Importation du fichier CSS
-import bgImage from "../../media/lush-green-farmland-being-surveyed-by-drone-precision-agriculture.jpg";
-import CategorieProduits from "../../components/CategorieProduits/CategorieProduits";
-import Services from "../../components/Services/Services";
+import React from "react";
+import "./Home.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { Link } from "react-router-dom";
+import Nav from "../../components/Nav/Nav";
+import Slider from "../../components/Slider/Slider";
+import CardsCooperative from "../../components/CardsCooperative/CardsCooperative";
+import CategorieProduits from "../../components/CategorieProduits/CategorieProduits";
+import Services from "../../components/Services/Services";
+import Footer from "../../components/Footer/Footer";
+
+// Importation des images de produits
+import bgImage from "../../media/lush-green-farmland-being-surveyed-by-drone-precision-agriculture.jpg";
 import img1 from "../../media/pomme.png";
 import img2 from "../../media/orange.png";
 import img3 from "../../media/aubergine.png";
 import img4 from "../../media/maïs.png";
 import img5 from "../../media/pomme-de-terre.png";
 import img6 from "../../media/salad.png";
-import Footer from "../../components/Footer/Footer";
+import img7 from "../../media/tomates.png";
+
 const Home = () => {
-const produits = [
+  // Définition des props pour le Slider
+  const welcomeText = {
+    title: "Bienvenue sur",
+    title2: "Notre plateforme",
+    title3: "AgriTech",
+    title4: "Découvrez les produits agricoles de qualité près de chez vous"
+  };
+  
+  const buttonProps = {
+    buttonText: "Découvrir",
+    buttonLink: "/products"
+  };
+  
+  // L'URL de l'image d'arrière-plan formatée pour CSS
+  const backgroundImageStyle = `url(${bgImage})`;
+  
+  // Données pour les produits
+  const produits = [
     {
       id: 1,
       name: "Pommes vertes",
@@ -48,7 +70,6 @@ const produits = [
       oldPrice: 0,
       rating: 4.5,
     },
-
     {
       id: 5,
       name: "Patates Douces",
@@ -65,64 +86,57 @@ const produits = [
       oldPrice: 0,
       rating: 4.2,
     },
-
-    // Ajoutez autant d'objets que nécessaire pour représenter vos produits populaires.
   ];
-  return (
-    <div className="home">
-        <Nav />
-        <Slider
-        welcomeText={{
-          title: "Bienvenue à vous, ",
-          title2: "chez",
-          title3: "Agri-Tech.",
-          title4: "Agri-Tech, l'agriculture à l'ère du numérique : ", 
-        }}
-        backgroundImage={bgImage}
-        imageUrl="https://img.freepik.com/free-photo/african-woman-harvesting-vegetables_23-2151441227.jpg?t=st=1745615587~exp=1745619187~hmac=706f7a87a1c12c0c1a9a8a1b199684430836df3c382f077a3c42de12ba50af89&w=1380"
-        cropTitle="Tomates"
-        buttonProps={{
-          buttonText: "Découvrir",
-          buttonLink: "/ecom/products",
-        }}
-      />
-      <h2>
-        Les coopératives partenaire à{" "}
-        <span>
-          <span className="Tech">Agri</span>Tech
-        </span>
-      </h2>
-      <CardsCooperative />
-      <h2>
-        Nos produits par
-        <span> categorie</span>
-      </h2>
-      <CategorieProduits/>
-      <Services />
-      <h2>
-        Quelques
-        <span> Produits</span>
-      </h2>
-      <div className="card-container">
-        {produits.map((item) => (
-          <ProductCard
-            key={item._id}
-            id={item._id}
-            name={item.name}
-            price={item.price}
-            image={item.image}
-            rating={item.rating}
-          />
-        ))}
-      </div>
 
-      <div className="voir-tout-produits">
-        <Link to="/products">Voir plus de produits</Link>
-        <i className="fa-solid fa-arrow-right"></i>
+  return (
+    <div className="home-container">
+      <Nav />
+      <Slider 
+        welcomeText={welcomeText}
+        backgroundImage={backgroundImageStyle}
+        imageUrl={img7}
+        cropTitle="Agriculture de qualité"
+        buttonProps={buttonProps}
+      />
+      
+      <div className="cooperative-section">
+        <h2>
+          Les coopératives partenaire à{" "}
+          <span>AgriTech</span>
+        </h2>
+        <CardsCooperative />
       </div>
+      
+      <div className="categories-section">
+        <h2>
+          Nos produits par <span>categorie</span>
+        </h2>
+        <CategorieProduits />
+      </div>
+      
+      <div className="home">
+        <h2>
+          Quelques <span className="Tech">Produits</span>
+        </h2>
+        <div className="card-container">
+          {produits.map((product) => (
+            <ProductCard 
+              key={product.id} 
+              product={product}
+            />
+          ))}
+        </div>
+        <div className="voir-tout-produits">
+          <Link to="/products">
+            Voir tous les produits
+          </Link>
+        </div>
+      </div>
+      
+      <Services />
       <Footer />
     </div>
   );
-}
+};
 
 export default Home;

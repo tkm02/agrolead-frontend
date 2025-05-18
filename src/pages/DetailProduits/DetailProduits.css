@@ -4,6 +4,14 @@
     flex-direction: column;
     margin: 30px auto;
     width: 90%;
+    max-width: 1200px;
+}
+
+.product-detail-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 .tab-navigation {
@@ -28,12 +36,78 @@
 }
 
 .tab-link:hover {
-    color: #146907; /* Couleur au survol */
+    color: #146907;
 }
 
 .tab-link.active {
-    color: #146907; /* Couleur de l'onglet actif */
-    border-bottom: 2px solid #146907; /* Ligne active */
+    color: #146907;
+    border-bottom: 2px solid #146907;
     font-weight: bold;
 }
 
+.tab-content {
+    padding: 2rem 0;
+    min-height: 200px;
+}
+
+/* Styles pour les états de chargement et erreur */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #146907;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-container {
+    text-align: center;
+    padding: 2rem;
+    color: #d32f2f;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #438026;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #356a1e;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-detail-container {
+        flex-direction: column;
+    }
+    
+    .tab-navigation {
+        flex-wrap: wrap;
+    }
+    
+    .tab-link {
+        margin: 5px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}

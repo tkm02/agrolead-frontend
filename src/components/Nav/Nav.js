@@ -2,7 +2,17 @@ import React from "react";
 import "./Nav.css"; // Importation du fichier CSS
 import { Link, NavLink } from "react-router-dom";
 import logoAgroLeadTech from "../../media/ALT_BG_BLANC.png"; // Importation de l'image du logo
+import { useCart } from "../../context/CartContext"; // Importez le hook useCart
+import { useFavorites } from "../../context/FavoritesContext"; // Importez le hook useFavorites
+
 const Nav = () => {
+  // Utilisez les hooks pour obtenir le nombre d'articles dans le panier et les favoris
+  const { getCartCount } = useCart();
+  const { getFavoritesCount } = useFavorites();
+  
+  const cartCount = getCartCount();
+  const favoritesCount = getFavoritesCount();
+
   return (
     <header className="nav-header">
       <div className="nav-logo">
@@ -27,10 +37,11 @@ const Nav = () => {
       </nav>
       <div className="nav-actions">
         <Link to="/favoris" className="nav-icon">
+          {favoritesCount > 0 && <div className="nav-cart-count">{favoritesCount}</div>}
           <i className="fa-solid fa-heart"></i>
         </Link>
         <Link to="/panier" className="nav-icon">
-          <div className="nav-cart-count">1</div>
+          {cartCount > 0 && <div className="nav-cart-count">{cartCount}</div>}
           <i className="fa-solid fa-cart-shopping"></i>
         </Link>
         <Link to="/dashboard" className="nav-icon">

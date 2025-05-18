@@ -1,52 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Panier.css";
-import img from "../../media/chou.png";
 import Nav from "../../components/Nav/Nav";
 import ResumeCard from "../../components/ResumeCard/ResumeCard";
 import Footer from "../../components/Footer/Footer";
+import { useCart } from "../../context/CartContext"; // Importation du hook useCart
 
 const Panier = () => {
-  const initialProductData = [
-    {
-      id: 1,
-      name: "Poivron vert biologique",
-      price: 1400,
-      quantity: 5,
-      imageSrc: img,
-    },
-    {
-      id: 2,
-      name: "Chou frais local",
-      price: 1400,
-      quantity: 5,
-      imageSrc: img,
-    },
-  ];
-
-  const [products, setProducts] = useState(initialProductData);
-  const [subTotal, setSubTotal] = useState(0);
+  const { cartItems, updateQuantity, removeFromCart, subTotal } = useCart();
   const [isUpdating, setIsUpdating] = useState(false);
 
-  useEffect(() => {
-    let total = 0;
-    products.forEach((product) => {
-      total += product.price * product.quantity;
-    });
-    setSubTotal(total);
-  }, [products]);
-
-  const handleQuantityChange = (index, newQuantity) => {
-    if (newQuantity < 1) return;
-    
-    const newProducts = [...products];
-    newProducts[index].quantity = newQuantity;
-    setProducts(newProducts);
+  const handleQuantityChange = (productId, newQuantity) => {
+    updateQuantity(productId, newQuantity);
   };
 
-  const handleRemoveItem = (index) => {
-    const newProducts = [...products];
-    newProducts.splice(index, 1);
-    setProducts(newProducts);
+  const handleRemoveItem = (productId) => {
+    removeFromCart(productId);
   };
 
   const handleUpdateCart = () => {
@@ -64,7 +32,7 @@ const Panier = () => {
         <h2>Mon Panier</h2>
       </div>
       <div className="section-panier">
-        {products.length > 0 ? (
+        {cartItems.length > 0 ? (
           <>
             <div className="table-container">
               <table className="styled-table">
@@ -78,11 +46,11 @@ const Panier = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {products.map((product, index) => (
+                  {cartItems.map((product) => (
                     <tr key={product.id}>
                       <td>
                         <div className="product-info">
-                          <img src={product.imageSrc} alt={product.name} />
+                          <img src={product.image} alt={product.name} />
                           <span>{product.name}</span>
                         </div>
                       </td>
@@ -92,7 +60,7 @@ const Panier = () => {
                           className="btn-add"
                           aria-label="Diminuer la quantité"
                           onClick={() =>
-                            handleQuantityChange(index, product.quantity - 1)
+                            handleQuantityChange(product.id, product.quantity - 1)
                           }
                         >
                           <i className="fas fa-minus"></i>
@@ -102,7 +70,7 @@ const Panier = () => {
                           className="btn-add"
                           aria-label="Augmenter la quantité"
                           onClick={() =>
-                            handleQuantityChange(index, product.quantity + 1)
+                            handleQuantityChange(product.id, product.quantity + 1)
                           }
                         >
                           <i className="fas fa-plus"></i>
@@ -111,7 +79,7 @@ const Panier = () => {
                       <td>XOF {(product.price * product.quantity).toLocaleString()}</td>
                       <td>
                         <button
-                          onClick={() => handleRemoveItem(index)}
+                          onClick={() => handleRemoveItem(product.id)}
                           className="btn-remove"
                           aria-label="Supprimer l'article"
                         >
